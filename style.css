@@ -1,0 +1,132 @@
+html {
+  background-color: rgb(255, 244, 232);
+}
+
+div {
+  border-radius: 40px;
+  min-height: 750px;
+  height: auto;
+  width: 800px;
+
+  margin: auto;
+  padding: 20px;
+
+  text-align: center;
+  background-color: rgb(200, 219, 175);
+  list-style-position: inside;
+  overflow: auto;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+li {
+  font-size: 27px;
+}
+
+ul {
+  font-size: 27px;
+  margin-top: 50px;
+  padding: 0;
+}
+
+.button {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2.5px;
+
+  cursor: pointer;
+  margin-bottom: 7px;
+  padding: 12px;
+  font-size: 17px;
+  background-color: rgb(139, 197, 216);
+}
+.button:hover {
+  background-color: rgb(169, 197, 216);
+}
+
+.text {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2, 5px;
+  border-color: black;
+
+  margin-bottom: 7px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(255, 253, 248);
+}
+
+.delete {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 17px;
+  border-style: solid;
+  border-width: 2.5px;
+
+  cursor: pointer;
+  background-color: rgba(255, 78, 78, 0.822);
+  margin: 5px;
+  padding: 10px;
+  font-size: 15px;
+  align-items: center;
+}
+.delete:hover {
+  background-color: rgba(255, 108, 108, 0.822);
+}
+
+.upper-container-right {
+  text-align: right;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+.upper-container-left {
+  text-align: left;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.back {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+
+  font-size: 17px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: rgba(24, 182, 255, 0.8);
+}
+.back:hover {
+  background-color: rgba(91, 195, 255, 0.8);
+}
+
+.account {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2.5px;
+
+  font-size: 17px;
+  padding: 8px;
+  cursor: pointer;
+  background-color: rgb(223, 223, 223);
+}
+.account:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gray;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(138, 138, 138);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(105, 105, 105);
+}
