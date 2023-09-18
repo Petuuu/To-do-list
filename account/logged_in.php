@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include '../actions/add_task.php';
 include '../actions/delete_task.php';
 include '../actions/open_sesame.php';
@@ -13,7 +15,7 @@ include_once '../functions.php';
 
 <head>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <title> PHP To-do list </title>
@@ -23,8 +25,8 @@ include_once '../functions.php';
 <body>
 
     <form method="post" class="upper-container-right">
-        <button type="submit" name="account">
-            <i class="fa-solid fa-user"></i>
+        <button class="button" type="submit" name="account">
+            <i class="fa-solid fa-user"> </i>
         </button>
     </form>
 

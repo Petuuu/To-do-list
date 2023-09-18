@@ -7,10 +7,10 @@ function list_tasks()
 
         foreach (array_reverse($_SESSION['list']) as $item) {
             echo
-                "<form method=post>
-                <li class=list> $item
-                <button class=delete type=submit method=post name=delete> x </button>
-                <input type=hidden name=valueToDelete value='$item'>
+                "<form method='post'>
+                <li class='list'> $item
+                <button class='delete' type='submit' name='delete-item'> x </button>
+                <input type='hidden' name='valueToDelete' value='$item'>
                 </li>
             </form>";
 
@@ -37,9 +37,24 @@ function same_index($arr1, $arr2, $value1, $value2)
     return false;
 }
 
-function list_accounts()
+function list_unames()
 {
+    if (!empty($_SESSION['list'])) {
+        echo "<ul>";
 
+        foreach (array_reverse($_SESSION['unames']) as $user) {
+            echo
+                "<form method='post'>
+                <li class='list'> $user
+                <button class='delete' type='submit' name='delete-item'> x </button>
+                <input type='hidden name='valueToDelete' value='$user'>
+                </li>
+            </form>";
+
+        }
+
+        echo "</ul>";
+    }
 }
 
 ?>

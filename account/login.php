@@ -1,7 +1,8 @@
 <?php
 
+session_start();
+
 include '../actions/back_button.php';
-include '../actions/check_credentials.php';
 
 ?>
 
@@ -40,12 +41,14 @@ include '../actions/check_credentials.php';
                 </p>
 
                 <p>
-                    <button class="button" type="submit" name="loging-in" method="post"> Login </button>
+                    <button class="button" type="submit" name="loging-in"> Login </button>
                 </p>
 
                 <?php
 
-                var_dump($_POST);
+                foreach ($_SESSION['unames'] as $names) {
+                    echo "$names";
+                }
 
                 ?>
             </ul>

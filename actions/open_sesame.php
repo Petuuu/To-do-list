@@ -10,4 +10,8 @@ if (isset($_POST['sign-up'])) {
     exit;
 }
 
+if (isset($_POST['account'])) {
+    header("Location: account.php");
+}
+
 ?>

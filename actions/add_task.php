@@ -1,12 +1,11 @@
 <?php
 
 if (isset($_POST['add'])) {
-    if (trim($_POST['task'] != "")) {
+    if (isset($_POST['task']) && trim($_POST['task']) !== "") {
         $_SESSION['list'][] = $_POST['task'];
 
-        header("Location: index.php");
+        header('Location: ' . $_SERVER['PHP_SELF']);
         exit;
-
     }
 }
 
