@@ -1,3 +1,7 @@
+<head>
+    <title> PHP To-do list </title>
+</head>
+
 <?php
 
 include_once '../functions.php';
