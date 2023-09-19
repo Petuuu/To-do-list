@@ -2,7 +2,7 @@
 
 session_start();
 
-include 'actions/buttons.php';
+include 'buttons.php';
 include 'actions/set_arrays.php';
 include_once 'functions.php';
 
