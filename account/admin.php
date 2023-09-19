@@ -2,8 +2,7 @@
 
 session_start();
 
-include '../actions/delete_task.php';
-include '../actions/open_sesame.php';
+include '../buttons.php';
 include '../actions/set_arrays.php';
 include_once '../functions.php';
 

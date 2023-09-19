@@ -1,8 +1,8 @@
 <?php
 
-include '../actions/back_button.php'
+include '../buttons.php';
 
-    ?>
+?>
 
 <!DOCTYPE html>
 <html>

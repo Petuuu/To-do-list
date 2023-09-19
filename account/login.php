@@ -2,7 +2,7 @@
 
 session_start();
 
-include '../actions/back_button.php';
+include '../buttons.php';
 
 ?>
 
