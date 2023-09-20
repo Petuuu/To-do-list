@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function list_tasks()
 {
     if (!empty($_SESSION['list'])) {
@@ -22,11 +24,6 @@ function list_tasks()
 
 function same_index($arr1, $arr2, $value1, $value2)
 {
-    if (!is_array($arr1) && !is_array($arr2)) {
-        $arr1 = array();
-        $arr2 = array();
-    }
-
     $index1 = array_search($value1, $arr1);
     $index2 = array_search($value2, $arr2);
 
@@ -39,7 +36,7 @@ function same_index($arr1, $arr2, $value1, $value2)
 
 function list_unames()
 {
-    if (!empty($_SESSION['list'])) {
+    if (!empty($_SESSION['unames'])) {
         echo "<ul>";
 
         foreach (array_reverse($_SESSION['unames']) as $user) {
@@ -47,7 +44,7 @@ function list_unames()
                 "<form method='post'>
                 <li class='list'> $user
                 <button class='delete' type='submit' name='delete-item'> x </button>
-                <input type='hidden name='valueToDelete' value='$user'>
+                <input type='hidden' name='valueToDelete' value='$user'>
                 </li>
             </form>";
 

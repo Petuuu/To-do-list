@@ -22,18 +22,15 @@ if (isset($_POST['signing-up'])) {
             alert('Passwords don\\'t match');
             window.location.href = document.referrer;
             </script>";
-
-                exit;
             }
 
         } else {
             echo "<script type='text/javascript'>
-        alert('Username not found');
+        alert('Username already used');
         window.location.href = document.referrer;
         </script>";
-
-            exit;
         }
+
     } else {
         echo "<script type='text/javascript'>
         alert('Please fill out all fields');
@@ -61,9 +58,8 @@ if (isset($_POST['loging-in'])) {
         alert('Incorrect username or password');
         window.location.href = document.referrer;
         </script>";
-
-            exit;
         }
+
     } else {
         echo "<script type='text/javascript'>
         alert('Please fill all out fields');

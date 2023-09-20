@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include '../buttons.php';
 
 ?>
@@ -43,14 +41,6 @@ include '../buttons.php';
                 <p>
                     <button class="button" type="submit" name="loging-in"> Login </button>
                 </p>
-
-                <?php
-
-                foreach ($_SESSION['unames'] as $names) {
-                    echo "$names";
-                }
-
-                ?>
             </ul>
         </form>
     </div>

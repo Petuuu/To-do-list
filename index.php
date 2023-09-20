@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include 'buttons.php';
 include 'actions/set_arrays.php';
 include_once 'functions.php';

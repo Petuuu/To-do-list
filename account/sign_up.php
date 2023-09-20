@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include '../buttons.php';
 
 ?>
@@ -46,7 +44,7 @@ include '../buttons.php';
                 </p>
 
                 <p>
-                    <button class="button" type="submit" name="signing-up" method="post"> Sign up </button>
+                    <button class="button" type="submit" name="signing-up"> Sign up </button>
                 </p>
             </ul>
         </form>
