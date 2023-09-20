@@ -1,6 +1,6 @@
 <?php
 
-include '../buttons.php';
+include '../actions/buttons.php';
 
 ?>
 
@@ -18,7 +18,7 @@ include '../buttons.php';
 
 <body>
     <form class="upper-container-left" method="post">
-        <button class="back" type="submit" name="back">
+        <button class="back" type="submit" name="back-index">
             <i class="fa-solid fa-rotate-left"> back </i>
         </button>
     </form>

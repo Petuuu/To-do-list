@@ -1,6 +1,6 @@
 <?php
 
-include 'buttons.php';
+include 'actions/buttons.php';
 include 'actions/set_arrays.php';
 include_once 'functions.php';
 
@@ -28,8 +28,8 @@ include_once 'functions.php';
         <h1> To-do list </h1>
 
         <form method="post">
-            <input class="text" type="text" name="task" placeholder="Type task here..." autocomplete="off">
-            <button class="button" type="submit" name="add"> Add task </button>
+            <input class="text" type="text" name="task-index" placeholder="Type task here..." autocomplete="off">
+            <button class="button" type="submit" name="add-index"> Add task </button>
         </form>
 
         <?php

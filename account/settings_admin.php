@@ -1,6 +1,6 @@
 <?php
 
-include '../buttons.php';
+include '../actions/buttons.php';
 
 ?>
 
@@ -19,7 +19,7 @@ include '../buttons.php';
 <body>
 
     <form class="upper-container-left" method="post">
-        <button class="back" type="submit" name="back">
+        <button class="back" type="submit" name="back-admin">
             <i class="fa-solid fa-rotate-left"> back </i>
         </button>
     </form>
@@ -31,13 +31,9 @@ include '../buttons.php';
             <p>
                 <button class="button" type="submit" name="log-out" id="big"> Log out </button>
             </p>
-
-            <p>
-                <button class="button-red" type="submit" name="delete-account" id="big"> Delete account </button>
-            </p>
         </form>
 
-        <i class="fa-solid fa-user" id="icon"> </i>
+        <i class="fa-solid fa-user-secret" id="icon-admin"> </i>
     </div>
 </body>
 

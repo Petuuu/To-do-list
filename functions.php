@@ -4,22 +4,20 @@ session_start();
 
 function list_tasks()
 {
-    if (!empty($_SESSION['list'])) {
-        echo "<ul>";
+    echo "<ul>";
 
-        foreach (array_reverse($_SESSION['list']) as $item) {
-            echo
-                "<form method='post'>
+    foreach (array_reverse($_SESSION['list-index']) as $item) {
+        echo
+            "<form method='post'>
                 <li class='list'> $item
-                <button class='delete' type='submit' name='delete-item'> x </button>
+                <button class='delete' type='submit' name='delete'> x </button>
                 <input type='hidden' name='valueToDelete' value='$item'>
                 </li>
             </form>";
 
-        }
-
-        echo "</ul>";
     }
+
+    echo "</ul>";
 }
 
 function same_index($arr1, $arr2, $value1, $value2)
@@ -36,22 +34,27 @@ function same_index($arr1, $arr2, $value1, $value2)
 
 function list_unames()
 {
-    if (!empty($_SESSION['unames'])) {
-        echo "<ul>";
+    $admin = count($_SESSION['unames']) - 1;
 
-        foreach (array_reverse($_SESSION['unames']) as $user) {
+    echo "<ul>";
+
+    foreach (array_reverse($_SESSION['unames']) as $user) {
+        if ($user == $admin) {
+            echo "<li class='list'> $user </li>";
+
+        } else {
             echo
                 "<form method='post'>
                 <li class='list'> $user
-                <button class='delete' type='submit' name='delete-item'> x </button>
+                <button class='delete' type='submit' name='delete'> x </button>
                 <input type='hidden' name='valueToDelete' value='$user'>
                 </li>
             </form>";
 
         }
-
-        echo "</ul>";
     }
+
+    echo "</ul>";
 }
 
 ?>

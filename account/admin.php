@@ -1,6 +1,6 @@
 <?php
 
-include '../buttons.php';
+include '../actions/buttons.php';
 include_once '../functions.php';
 
 ?>
@@ -20,8 +20,8 @@ include_once '../functions.php';
 <body>
 
     <form method="post" class="upper-container-right">
-        <button class="button" type="submit" name="account">
-            <i class="fa-solid fa-user"> </i>
+        <button class="button" type="submit" name="settings-a">
+            <i class="fa-solid fa-user-secret"> </i>
         </button>
     </form>
 
