@@ -1,6 +1,7 @@
 <?php
 
 include '../actions/buttons.php';
+include_once '../actions/functions.php';
 
 ?>
 

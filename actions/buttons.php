@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+include_once 'functions.php';
 
 if (isset($_POST['add-index'])) {
     if (trim($_POST['task-index']) !== "") {
@@ -27,14 +27,27 @@ if (isset($_POST['delete'])) {
 
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
+    }
+}
 
-    } elseif (($key = array_search($_POST['valueToDelete'], $_SESSION['unames'])) !== false) {
+if (isset($_POST['delete-user'])) {
+    if (($key = array_search($_POST['valueToDelete'], $_SESSION['unames'])) !== false) {
         unset($_SESSION['unames'][$key]);
 
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     }
 }
+
+if (isset($_POST['delete-index'])) {
+    if (($key = array_search($_POST['valueToDelete'], $_SESSION['list-index'])) !== false) {
+        unset($_SESSION['list-index'][$key]);
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit;
+    }
+}
+
 if (isset($_POST['login'])) {
     header("Location: account/login.php");
     exit;
@@ -76,7 +89,7 @@ if (isset($_POST['log-out'])) {
 }
 
 if (isset($_POST['delete-account'])) {
-    
+
 }
 
 ?>

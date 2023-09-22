@@ -1,11 +1,7 @@
-<head>
-    <title> PHP To-do list </title>
-</head>
-
 <?php
 
-include_once '../functions.php';
-include '../actions/set_arrays.php';
+include 'set_arrays.php';
+include_once 'functions.php';
 
 if (isset($_POST['signing-up'])) {
 

@@ -6,7 +6,7 @@ function list_tasks()
 {
     echo "<ul>";
 
-    foreach (array_reverse($_SESSION['list-index']) as $item) {
+    foreach (array_reverse($_SESSION['list']) as $item) {
         echo
             "<form method='post'>
                 <li class='list'> $item
@@ -15,6 +15,49 @@ function list_tasks()
                 </li>
             </form>";
 
+    }
+
+    echo "</ul>";
+}
+
+function list_tasks_index()
+{
+    echo "<ul>";
+
+    foreach (array_reverse($_SESSION['list-index']) as $item) {
+        echo
+            "<form method='post'>
+                <li class='list'> $item
+                <button class='delete' type='submit' name='delete-index'> x </button>
+                <input type='hidden' name='valueToDelete' value='$item'>
+                </li>
+            </form>";
+
+    }
+
+    echo "</ul>";
+}
+
+function list_unames()
+{
+    $admin = 1;
+
+    echo "<ul>";
+
+    foreach (array_reverse($_SESSION['unames']) as $user) {
+        if ($user == $admin) {
+            echo "<li class='list'> $user </li>";
+
+        } else {
+            echo
+                "<form method='post'>
+                <li class='list'> $user
+                <button class='delete' type='submit' name='delete-user'> x </button>
+                <input type='hidden' name='valueToDelete' value='$user'>
+                </li>
+            </form>";
+
+        }
     }
 
     echo "</ul>";
@@ -30,31 +73,6 @@ function same_index($arr1, $arr2, $value1, $value2)
     }
 
     return false;
-}
-
-function list_unames()
-{
-    $admin = count($_SESSION['unames']) - 1;
-
-    echo "<ul>";
-
-    foreach (array_reverse($_SESSION['unames']) as $user) {
-        if ($user == $admin) {
-            echo "<li class='list'> $user </li>";
-
-        } else {
-            echo
-                "<form method='post'>
-                <li class='list'> $user
-                <button class='delete' type='submit' name='delete'> x </button>
-                <input type='hidden' name='valueToDelete' value='$user'>
-                </li>
-            </form>";
-
-        }
-    }
-
-    echo "</ul>";
 }
 
 ?>

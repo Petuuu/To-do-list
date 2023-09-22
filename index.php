@@ -2,7 +2,7 @@
 
 include 'actions/buttons.php';
 include 'actions/set_arrays.php';
-include_once 'functions.php';
+include_once 'actions/functions.php';
 
 ?>
 
@@ -34,7 +34,7 @@ include_once 'functions.php';
 
         <?php
 
-        list_tasks();
+        list_tasks_index();
 
         ?>
 
