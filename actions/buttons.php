@@ -13,7 +13,7 @@ if (isset($_POST['add-index'])) {
 
 if (isset($_POST['add'])) {
     if (trim($_POST['task']) !== "") {
-        $_SESSION['list'][$_SESSION['index']][] = $_POST['task'];
+        $_SESSION['index'][] = $_POST['task'];
 
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;

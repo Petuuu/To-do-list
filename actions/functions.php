@@ -4,7 +4,7 @@ session_start();
 
 function list_tasks()
 {
-    if (!empty($_SESSION['list'][$_SESSION['index']])) {
+    if (isset($_SESSION['list'][$_SESSION['index']]) && is_array($_SESSION['list'][$_SESSION['index']])) {
         echo "<ul>";
 
         foreach (array_reverse($_SESSION['list'][$_SESSION['index']]) as $item) {
