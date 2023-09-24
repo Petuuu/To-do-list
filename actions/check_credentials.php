@@ -13,6 +13,7 @@ if (isset($_POST['signing-up'])) {
 
                 $_SESSION['unames'][] = $_POST['uname-new'];
                 $_SESSION['pwords'][] = $_POST['pw-new'];
+                $_SESSION['list'][] = count($_SESSION['list']) + 1;
 
                 header("Location: ../account/login.php");
                 exit;
@@ -49,6 +50,8 @@ if (isset($_POST['loging-in'])) {
                 header("Location: ../account/admin.php");
                 exit;
             }
+
+            $_SESSION['index'] = array_search($_POST['uname'], $_SESSION['unames']);
 
             header("Location: ../account/logged_in.php");
             exit;

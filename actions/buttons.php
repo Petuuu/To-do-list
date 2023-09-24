@@ -13,7 +13,7 @@ if (isset($_POST['add-index'])) {
 
 if (isset($_POST['add'])) {
     if (trim($_POST['task']) !== "") {
-        $_SESSION['list'][] = $_POST['task'];
+        $_SESSION['list'][$_SESSION['index']][] = $_POST['task'];
 
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
@@ -22,8 +22,8 @@ if (isset($_POST['add'])) {
 
 if (isset($_POST['delete'])) {
 
-    if (($key = array_search($_POST['valueToDelete'], $_SESSION['list'])) !== false) {
-        unset($_SESSION['list'][$key]);
+    if (($key = array_search($_POST['valueToDelete'], $_SESSION['list'][$_SESSION['index']])) !== false) {
+        unset($_SESSION['list'][$_SESSION['index']][$key]);
 
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
@@ -89,7 +89,12 @@ if (isset($_POST['log-out'])) {
 }
 
 if (isset($_POST['delete-account'])) {
+    unset($_SESSION['unames'][$_SESSION['index']]);
+    unset($_SESSION['pwords'][$_SESSION['index']]);
+    unset($_SESSION['list'][$_SESSION['index']]);
 
+    header("Location: ../index.php");
+    exit;
 }
 
 ?>

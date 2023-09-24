@@ -4,17 +4,19 @@ session_start();
 
 function list_tasks()
 {
-    echo "<ul>";
+    if (!empty($_SESSION['list'][$_SESSION['index']])) {
+        echo "<ul>";
 
-    foreach (array_reverse($_SESSION['list']) as $item) {
-        echo
-            "<form method='post'>
+        foreach (array_reverse($_SESSION['list'][$_SESSION['index']]) as $item) {
+            echo
+                "<form method='post'>
                 <li class='list'> $item
                 <button class='delete' type='submit' name='delete'> x </button>
                 <input type='hidden' name='valueToDelete' value='$item'>
                 </li>
             </form>";
 
+        }
     }
 
     echo "</ul>";
