@@ -22,30 +22,48 @@ if (isset($_POST['add'])) {
 
 if (isset($_POST['delete'])) {
 
-    if (($key = array_search($_POST['valueToDelete'], $_SESSION['list'][$_SESSION['index']])) !== false) {
-        unset($_SESSION['list'][$_SESSION['index']][$key]);
+    $key = array_search($_POST['valueToDelete'], $_SESSION['list'][$_SESSION['index']]);
+    unset($_SESSION['list'][$_SESSION['index']][$key]);
 
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
 }
 
 if (isset($_POST['delete-user'])) {
-    if (($key = array_search($_POST['valueToDelete'], $_SESSION['unames'])) !== false) {
-        unset($_SESSION['unames'][$key]);
+    $key = array_search($_POST['valueToDelete'], $_SESSION['unames']);
+    unset($_SESSION['unames'][$key]);
 
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
 }
 
 if (isset($_POST['delete-index'])) {
-    if (($key = array_search($_POST['valueToDelete'], $_SESSION['list-index'])) !== false) {
-        unset($_SESSION['list-index'][$key]);
+    $key = array_search($_POST['valueToDelete'], $_SESSION['list-index']);
+    unset($_SESSION['list-index'][$key]);
 
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+if (isset($_POST['edit'])) {
+    echo "<script>
+    var edit_uname = prompt('New username:');
+    $.ajax(
+    {
+        type: 'POST',
+        url: 'buttons.php',
+        data: { username: edit_uname },
+        success: function(response)
+        {
+            console.log(response);
+        }
+    });
+    </script>";
+
+    $key = array_search($_POST['valueToDelete'], $_SESSION['unames']);
+    $_SESSION['unames'][$key] = $_POST['username'];
+
+    var_dump($_SESSION['unames']);
 }
 
 if (isset($_POST['login'])) {

@@ -48,13 +48,20 @@ function list_unames()
 
     foreach (array_reverse($_SESSION['unames']) as $user) {
         if ($user == $admin) {
-            echo "<li class='list'> $user </li>";
+            echo
+                "<form method='post'>
+                <li class='list'> $user
+                <button class='button' type='submit' name='edit'> Edit </button>
+                <input type='hidden' name='valueToDelete' value='$user'>
+                </li>
+            </form>";
 
         } else {
             echo
                 "<form method='post'>
                 <li class='list'> $user
                 <button class='delete' type='submit' name='delete-user'> x </button>
+                <button class='button' type='submit' name='edit'> Edit </button>
                 <input type='hidden' name='valueToDelete' value='$user'>
                 </li>
             </form>";
