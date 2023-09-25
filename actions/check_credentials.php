@@ -18,21 +18,21 @@ if (isset($_POST['signing-up'])) {
                 exit;
 
             } else {
-                echo "<script type='text/javascript'>
+                echo "<script>
             alert('Passwords don\\'t match');
             window.location.href = document.referrer;
             </script>";
             }
 
         } else {
-            echo "<script type='text/javascript'>
+            echo "<script>
         alert('Username already used');
         window.location.href = document.referrer;
         </script>";
         }
 
     } else {
-        echo "<script type='text/javascript'>
+        echo "<script>
         alert('Please fill out all fields');
         window.location.href = document.referrer;
         </script>";
