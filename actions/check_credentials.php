@@ -13,7 +13,6 @@ if (isset($_POST['signing-up'])) {
 
                 $_SESSION['unames'][] = $_POST['uname-new'];
                 $_SESSION['pwords'][] = $_POST['pw-new'];
-                $_SESSION['list'][] = count($_SESSION['list']) + 1;
 
                 header("Location: ../account/login.php");
                 exit;
