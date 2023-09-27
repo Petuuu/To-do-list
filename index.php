@@ -28,13 +28,24 @@ include_once 'actions/functions.php';
         <h1> To-do list </h1>
 
         <form method="post">
-            <input class="text" type="text" name="task-index" placeholder="Type task here..." autocomplete="off">
-            <button class="button" type="submit" name="add-index"> Add task </button>
+            <input class="text" type="text" name="task-i" placeholder="Type task here..." autocomplete="off">
+            <button class="button" type="submit" name="add-i"> Add task </button>
         </form>
 
         <?php
 
-        list_tasks_index();
+        list_tasks_i();
+
+        if (isset($_POST['edit-i'])) {
+            echo "<form method='post'>
+                    <input class='text' type='text' name='newValue' autocomplete='off'>
+                    <button class='button' type='submit' name='edited-i'> Change </button>
+                </form>";
+
+            $key = array_search($_POST['value'], $_SESSION['list-i']);
+            echo $key;
+            echo $_SESSION['list-i'][$key];
+        }
 
         ?>
 

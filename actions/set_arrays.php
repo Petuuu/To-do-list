@@ -1,7 +1,7 @@
 <?php
 
-if (!isset($_SESSION['list-index']) || !is_array($_SESSION['list-index'])) {
-    $_SESSION['list-index'] = array();
+if (!isset($_SESSION['list-i']) || !is_array($_SESSION['list-i'])) {
+    $_SESSION['list-i'] = array();
 }
 
 if (!isset($_SESSION['list']) || !is_array($_SESSION['list'])) {

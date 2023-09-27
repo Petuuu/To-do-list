@@ -19,7 +19,7 @@ include_once '../actions/functions.php';
 
 <body>
     <form class="upper-container-left" method="post">
-        <button class="back" type="submit" name="back-index">
+        <button class="back" type="submit" name="back-i">
             <i class="fa-solid fa-rotate-left"> back </i>
         </button>
     </form>

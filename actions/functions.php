@@ -4,34 +4,34 @@ session_start();
 
 function list_tasks()
 {
-    if (isset($_SESSION['list'][$_SESSION['index']]) && is_array($_SESSION['list'][$_SESSION['index']])) {
-        echo "<ul>";
+    echo "<ul>";
 
-        foreach (array_reverse($_SESSION['list'][$_SESSION['index']]) as $item) {
-            echo
-                "<form method='post'>
-                <li class='list'> $item
-                <button class='delete' type='submit' name='delete'> x </button>
-                <input type='hidden' name='valueToDelete' value='$item'>
-                </li>
-            </form>";
+    foreach (array_reverse($_SESSION['list'][$_SESSION['index']]) as $item) {
+        echo
+            "<form method='post'>
+                    <li class='list'> $item
+                        <button class='delete' type='submit' name='delete'> x </button>
+                        <button class='button' type='submit' name='edit'> Edit </button>
+                        <input type='hidden' name='value' value='$item'>
+                    </li>
+                </form>";
 
-        }
     }
 
     echo "</ul>";
 }
 
-function list_tasks_index()
+function list_tasks_i()
 {
     echo "<ul>";
 
-    foreach (array_reverse($_SESSION['list-index']) as $item) {
+    foreach (array_reverse($_SESSION['list-i']) as $item) {
         echo
             "<form method='post'>
                 <li class='list'> $item
-                <button class='delete' type='submit' name='delete-index'> x </button>
-                <input type='hidden' name='valueToDelete' value='$item'>
+                    <button class='delete' type='submit' name='delete-i'> x </button>
+                    <button class='button' type='submit' name='edit-i'> Edit </button>
+                    <input type='hidden' name='value' value='$item'>
                 </li>
             </form>";
 
@@ -42,29 +42,22 @@ function list_tasks_index()
 
 function list_unames()
 {
-    $admin = 1;
+    $admin = $_SESSION['unames'][0];
 
     echo "<ul>";
 
     foreach (array_reverse($_SESSION['unames']) as $user) {
         if ($user == $admin) {
-            echo
-                "<form method='post'>
-                <li class='list'> $user
-                <button class='button' type='submit' name='edit'> Edit </button>
-                <input type='hidden' name='valueToDelete' value='$user'>
-                </li>
-            </form>";
+            echo "<li class='list'> $user </li>";
 
         } else {
             echo
                 "<form method='post'>
-                <li class='list'> $user
-                <button class='delete' type='submit' name='delete-user'> x </button>
-                <button class='button' type='submit' name='edit'> Edit </button>
-                <input type='hidden' name='valueToDelete' value='$user'>
-                </li>
-            </form>";
+                    <li class='list'> $user
+                        <button class='delete' type='submit' name='delete-user'> x </button>
+                        <input type='hidden' name='value' value='$user'>
+                    </li>
+                </form>";
 
         }
     }
