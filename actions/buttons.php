@@ -37,7 +37,7 @@ if (isset($_POST['delete-user'])) {
 }
 
 if (isset($_POST['delete-i'])) {
-    $key = array_search($_POST['value'], $_SESSION['list-i']);
+    $key = array_search($_POST['value-i'], $_SESSION['list-i']);
     unset($_SESSION['list-i'][$key]);
 
     header("Location: " . $_SERVER['PHP_SELF']);
@@ -58,7 +58,7 @@ if (isset($_POST['edited'])) {
 
 if (isset($_POST['edited-i'])) {
     if (trim($_POST['newValue']) !== "") {
-        $key = array_search($_POST['value'], $_SESSION['list-i']);
+        $key = array_search($_POST['value-i'], $_SESSION['list-i']);
         $_SESSION['list-i'][$key] = $_POST['newValue'];
 
         list_tasks_i();

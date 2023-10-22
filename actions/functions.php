@@ -6,9 +6,11 @@ function list_tasks()
 {
     echo "<ul>";
 
-    foreach (array_reverse($_SESSION['list'][$_SESSION['index']]) as $item) {
-        echo
-            "<form method='post'>
+    if (!empty($_SESSION["list"][$_SESSION["index"]])) {
+
+        foreach (array_reverse($_SESSION['list'][$_SESSION['index']]) as $item) {
+            echo
+                "<form method='post'>
                     <li class='list'> $item
                         <button class='delete' type='submit' name='delete'> x </button>
                         <button class='button' type='submit' name='edit'> Edit </button>
@@ -16,9 +18,10 @@ function list_tasks()
                     </li>
                 </form>";
 
-    }
+        }
 
-    echo "</ul>";
+        echo "</ul>";
+    }
 }
 
 function list_tasks_i()
@@ -31,7 +34,7 @@ function list_tasks_i()
                 <li class='list'> $item
                     <button class='delete' type='submit' name='delete-i'> x </button>
                     <button class='button' type='submit' name='edit-i'> Edit </button>
-                    <input type='hidden' name='value' value='$item'>
+                    <input type='hidden' name='value-i' value='$item'>
                 </li>
             </form>";
 

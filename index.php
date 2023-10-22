@@ -42,7 +42,7 @@ include_once 'actions/functions.php';
                     <button class='button' type='submit' name='edited-i'> Change </button>
                 </form>";
 
-            $key = array_search($_POST['value'], $_SESSION['list-i']);
+            $key = array_search($_POST['value-i'], $_SESSION['list-i']);
             echo $key;
             echo $_SESSION['list-i'][$key];
         }
