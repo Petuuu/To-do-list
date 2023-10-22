@@ -36,17 +36,6 @@ include_once 'actions/functions.php';
 
         list_tasks_i();
 
-        if (isset($_POST['edit-i'])) {
-            echo "<form method='post'>
-                    <input class='text' type='text' name='newValue' autocomplete='off'>
-                    <button class='button' type='submit' name='edited-i'> Change </button>
-                </form>";
-
-            $key = array_search($_POST['value-i'], $_SESSION['list-i']);
-            echo $key;
-            echo $_SESSION['list-i'][$key];
-        }
-
         ?>
 
     </div>

@@ -44,30 +44,6 @@ if (isset($_POST['delete-i'])) {
     exit;
 }
 
-if (isset($_POST['edited'])) {
-    if (trim($_POST['newValue']) !== "") {
-        $key = array_search($_POST['value'], $_SESSION['list'][$_SESSION['index']]);
-        $_SESSION['list'][$_SESSION['index']][$key] = $_POST['newValue'];
-
-        list_tasks();
-
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
-}
-
-if (isset($_POST['edited-i'])) {
-    if (trim($_POST['newValue']) !== "") {
-        $key = array_search($_POST['value-i'], $_SESSION['list-i']);
-        $_SESSION['list-i'][$key] = $_POST['newValue'];
-
-        list_tasks_i();
-
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit;
-    }
-}
-
 if (isset($_POST['login'])) {
     header("Location: account/login.php");
     exit;

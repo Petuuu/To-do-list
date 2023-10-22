@@ -38,13 +38,6 @@ include_once '../actions/functions.php';
 
         list_tasks();
 
-        if (isset($_POST['edit'])) {
-            echo "<form method='post'>
-                    <input class='text' type='text' name='newValue' autocomplete='off'>
-                    <button class='button' type='submit' name='edited'> Change </button>
-                </form>";
-        }
-        
         ?>
 
     </div>
