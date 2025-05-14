@@ -1,5 +1,7 @@
-A simple to-do list I was challenged to make.
+This project is a basic to-do list application, created as part of a challenge.
 
-The first account made in the session is an "admin" account, in which you can view and delete all accounts.
+It’s my first project built using PHP.
 
-The edit function in this project is not great, but it works.
+The first account created during the session is designated as the "admin" account, which grants the ability to view and delete all user accounts.
+
+While the edit functionality isn’t perfect, it is fully operational.
